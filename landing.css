@@ -1,0 +1,292 @@
+
+/* ---------- General styles ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #f7f5f0;
+    --surface: #ffffff;
+    --text: #292824;
+    --muted: #77756e;
+    --accent: #8b8174;
+    --border: #e7e2d9;
+    --hover: #f0ede6;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Navigation ---------- */
+
+.navbar {
+    width: 100%;
+    padding: 26px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--text);
+    color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+}
+
+.nav-label {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+/* ---------- Main landing section ---------- */
+
+.hero {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 75px 24px 60px;
+    text-align: center;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.sparkle {
+    font-size: 17px;
+    color: var(--accent);
+}
+
+h1 {
+    margin-top: 28px;
+    font-size: clamp(42px, 7vw, 72px);
+    line-height: 1.08;
+    letter-spacing: -3px;
+    font-weight: 800;
+}
+
+h1 span {
+    color: var(--accent);
+}
+
+.description {
+    max-width: 510px;
+    margin: 22px auto 38px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* ---------- Navigation cards ---------- */
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 790px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.joke-card {
+    position: relative;
+    min-height: 220px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 26px 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    text-decoration: none;
+    color: var(--text);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.joke-card:hover {
+    transform: translateY(-5px);
+    border-color: #c9c0b3;
+    box-shadow: 0 14px 30px rgba(50, 45, 35, 0.08);
+}
+
+.card-icon {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    font-size: 27px;
+}
+
+.silly-icon {
+    background: #f1eee7;
+}
+
+.generator-icon {
+    background: #eae8e1;
+}
+
+.card-text {
+    padding-top: 4px;
+    padding-right: 8px;
+}
+
+.card-text h2 {
+    font-size: 19px;
+    margin-bottom: 10px;
+    letter-spacing: -0.4px;
+}
+
+.card-text p {
+    min-height: 45px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.card-link {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card-link span {
+    margin-left: 4px;
+}
+
+.arrow {
+    position: absolute;
+    right: 20px;
+    bottom: 22px;
+    font-size: 21px;
+    color: var(--accent);
+    transition: transform 0.2s ease;
+}
+
+.joke-card:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* ---------- Footer note ---------- */
+
+.bottom-note {
+    margin-top: 38px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.bottom-note span {
+    margin: 0 6px;
+    color: var(--accent);
+}
+
+footer {
+    padding: 22px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+footer span {
+    margin: 0 5px;
+}
+
+/* ---------- Responsive design ---------- */
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .nav-label {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .hero {
+        padding: 60px 20px 45px;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .button-container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .joke-card {
+        min-height: 180px;
+    }
+
+    .card-text p {
+        min-height: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
